@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
-
-const Dashboard = () => <h2>Dashboard</h2>;
-
+import Dashboard from './Dashboard';
+import FaqNew from './faq/FaqNew';
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -18,7 +17,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/faq/new" component={FaqNew} />
           </div>
         </BrowserRouter>
       </div>
